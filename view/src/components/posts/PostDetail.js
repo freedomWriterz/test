@@ -4,7 +4,7 @@ export class PostDetail extends Component {
     render() {
         return (
             <div>
-                
+                // Mohammad Obeidat changed the code here
             </div>
         )
     }
