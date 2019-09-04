@@ -6,7 +6,7 @@ class PostsParent extends Component {
   render() {
     return (
       <div className="App">
-        {/* // OBEIDAT WILL EDIT HERE
+        {/*
 // OBEIDAT WILL EDIT HERE
 // OBEIDAT WILL EDIT HERE
 // OBEIDAT WILL EDIT HERE
