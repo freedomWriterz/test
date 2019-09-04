@@ -5,15 +5,8 @@ const Posts = (props) => {
     console.log('POST FROM POSTS', props.posts)
     return (
         <ul>
-        {/* // OBEIDAT WILL EDIT HERE
-// OBEIDAT WILL EDIT HERE
-// OBEIDAT WILL EDIT HERE
-// OBEIDAT WILL EDIT HERE
-// OBEIDAT WILL EDIT HERE
-// OBEIDAT WILL EDIT HERE
-// OBEIDAT WILL EDIT HERE
-// OBEIDAT WILL EDIT HERE
-// OBEIDAT WILL EDIT HERE */}        </ul>
+            {props.posts.map((post, id) => <PostItem key={id} post={post} />)}
+        </ul>
     )
 }
 
