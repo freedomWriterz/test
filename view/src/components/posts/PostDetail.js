@@ -1,13 +1,21 @@
 import React, { Component } from 'react'
 
-export class PostDetail extends Component {
+export class PostDetails extends Component {
     render() {
         return (
             <div>
-                // Mohammad Obeidat changed the code here
+                {/* // OBEIDAT WILL EDIT HERE
+// OBEIDAT WILL EDIT HERE
+// OBEIDAT WILL EDIT HERE
+// OBEIDAT WILL EDIT HERE
+// OBEIDAT WILL EDIT HERE
+// OBEIDAT WILL EDIT HERE
+// OBEIDAT WILL EDIT HERE
+// OBEIDAT WILL EDIT HERE
+// OBEIDAT WILL EDIT HERE */}
             </div>
         )
     }
 }
 
-export default PostDetail
+export default PostDetails
