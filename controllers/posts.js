@@ -2,15 +2,21 @@ const posts = require("../models/posts");
 const express = require("express");
 const router = express.Router();
 
-// OBEIDAT WILL EDIT HERE
-// OBEIDAT WILL EDIT HERE
-// OBEIDAT WILL EDIT HERE
-// OBEIDAT WILL EDIT HERE
-// OBEIDAT WILL EDIT HERE
-// OBEIDAT WILL EDIT HERE
-// OBEIDAT WILL EDIT HERE
-// OBEIDAT WILL EDIT HERE
-// OBEIDAT WILL EDIT HERE
+// @GET
+// To Check If Server Works Or Not
+
+app.get('/', (req, res) => {
+    res.json('Server Works *.* ')
+})
+
+// @GET
+// Return All Repositories From Database
+app.get('/posts', (req, res) => {
+
+    mongo.getPosts(result => {
+        res.json(result)
+    })
+})
 
 /// ______________________________________________
 
