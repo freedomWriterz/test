@@ -8,10 +8,7 @@ const mongoose = require("mongoose");
 // OBEIDAT WILL EDIT HERE
 // OBEIDAT WILL EDIT HERE
 // OBEIDAT WILL EDIT HERE
-// OBEIDAT WILL EDIT HERE
-// OBEIDAT WILL EDIT HERE
-// OBEIDAT WILL EDIT HERE
-// OBEIDAT WILL EDIT HERE
+
 
 module.exports = {
   getPosts
