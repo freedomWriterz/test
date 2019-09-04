@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import Posts from './Posts';
-import axios from 'axios';
-class App extends Component {
+class PostsParent extends Component {
 
 
   render() {
@@ -22,4 +20,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default PostsParent;
