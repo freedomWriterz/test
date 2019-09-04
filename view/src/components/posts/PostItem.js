@@ -1,13 +1,26 @@
-import React, { Component } from 'react'
+import React from 'react'
+import PostDetails from './PostDetails'
+import {
+    BrowserRouter as Router,
+    Route,
+    Link
+} from 'react-router-dom'
 
-export class PostItem extends Component {
-    render() {
-        return (
-            <div>
-                
-            </div>
-        )
-    }
+const PostItem = (props) => {
+
+    return (
+        <Router>
+                   {/* // OBEIDAT WILL EDIT HERE
+// OBEIDAT WILL EDIT HERE
+// OBEIDAT WILL EDIT HERE
+// OBEIDAT WILL EDIT HERE
+// OBEIDAT WILL EDIT HERE
+// OBEIDAT WILL EDIT HERE
+// OBEIDAT WILL EDIT HERE
+// OBEIDAT WILL EDIT HERE
+// OBEIDAT WILL EDIT HERE */}
+        </Router>
+    )
 }
 
 export default PostItem
