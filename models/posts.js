@@ -4,26 +4,53 @@ const mongoose = require("mongoose");
 let postSchema = new mongoose.Schema({
   title: String,
   content: String,
-  imgURL: String,
+  imgURL: String
 })
 
 // Store The Scheme In Variable To Deal With This Variable.
 let Posts = mongoose.model('posts', postSchema);
 
-// @METHOD 'getRepositories'
-// Return All Repositories From Database
+// @METHOD 'getPosts'
+// Return All Posts From Database
 let getPosts = (callBack) => {
-  console.log(callBack);
   Posts.find({}, (error, response) => {
     if (error) {
       callBack(error);
     } else {
+      console.log('database response', response)
       callBack(response);
+    }
+  })
+}
+
+// @METHOD
+// Add Specific Post To Database.
+let addNewPost = (newPost, callBack) => {
+  Posts.create(newPost, (error, response) => {
+    if (error) {
+      callBack(error)
+    } else {
+      getPosts(callBack)
+    }
+  })
+}
+
+// @ METHOD
+// Delete Specific Post From Database.
+let deletePost = (postID, callBack) => {
+  Posts.findOneAndDelete({ _id: postID }, (error, response) => {
+    if (error) {
+      callBack(error);
+    } else {
+      getPosts(callBack);
     }
   })
 }
 
 
 module.exports = {
-  getPosts
+  getPosts,
+  addNewPost,
+  deletePost
+
 };

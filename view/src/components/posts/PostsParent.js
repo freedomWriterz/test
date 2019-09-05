@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
-import Posts from './Posts';
+import PostsPage from './PostsPage';
 import axios from 'axios';
 class PostsParent extends Component {
   state = {
@@ -8,16 +7,17 @@ class PostsParent extends Component {
   }
 
   componentDidMount = () => {
-    axios.get('http://localhost:9000/posts')
+     axios.get('http://localhost:9000/posts')
       .then(response => this.setState({ posts: response.data }))
       .catch(error => console.log('ERROR :', error))
 
+      console.log('state :', this.state.posts);
   }
 
   render() {
     return (
       <div className="App">
-        {this.state.posts.length > 0 && <Posts posts={this.state.posts} />}
+        {this.state.posts && <PostsPage posts={this.state.posts} />}
       </div>
     );
   }

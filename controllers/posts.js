@@ -5,19 +5,42 @@ const router = express.Router();
 // @GET
 // To Check If Server Works Or Not
 
-app.get('/', (req, res) => {
-    res.json('Server Works *.* ')
-})
+// localhost:9000/posts
+router.get('/', (req, res) => {
+    // console.log('SERVER get request line 10')
 
-// @GET
-// Return All Repositories From Database
-app.get('/posts', (req, res) => {
-
-    mongo.getPosts(result => {
+    posts.getPosts(result => {
+        // console.log('result', result);    
         res.json(result)
     })
 })
 
-/// ______________________________________________
+/*
+//  @GET
+//  Return All Posts From Database
+//  localhost:9000/posts/posts
+ router.get('/posts', (req, res) => {
+    posts.getPosts(result => {
+        res.json(result)
+    })
+}) */
+
+// @POST
+// Add Specific Post To Database.
+router.post('/', (req, res) => {
+    posts.addNewPost(req.body, (response) => {
+        res.json(response);
+    })
+})
+
+// @DELETE
+// Delete Specific Post To Database.
+router.delete('/:id', (req, res) => {
+    let postID = req.params.id
+    posts.deletePost(postID, response => {
+        res.json(response);
+    })
+})
+
 
 module.exports = router;
