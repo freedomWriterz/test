@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import { Link } from "react-router-dom";
+import './Nav.css';
 
 
 export class Nav extends Component {
     render() {
         return (
-            <div>
+            <div className="d-flex justify-content-center">
                 <nav>
                     <ul>
                         <li>
@@ -16,6 +17,15 @@ export class Nav extends Component {
                         </li>
                         <li>
                             <Link to="/contact">Contact</Link>
+                        </li>
+                        <li>
+                            <Link to="/login">Login</Link>
+                        </li>
+                        <li>
+                            <Link to="/signup">Sign Up</Link>
+                        </li>
+                        <li>
+                            <Link to="/admin/login">Admin Login</Link>
                         </li>
                     </ul>
                 </nav>

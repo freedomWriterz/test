@@ -23,4 +23,24 @@ router.get("/", async (req, res) => {
 
 // write you routes (server API) here
 
+const usersInDb = [
+  {
+    email: 'a@g.com',
+    password: 123
+  }
+]
+
+
+
+router.post('/login', (req, res) => {
+  const userToCheck = req.body
+  const result = usersInDb.reduce((result, elem) => {
+    if(elem.email === userToCheck.email && elem.password === +userToCheck.password)
+      return true;
+    return false;
+  }, false)
+
+  res.send(result);
+})
+
 module.exports = router;
