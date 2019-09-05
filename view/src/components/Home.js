@@ -1,12 +1,10 @@
 import React, { Component } from 'react'
-import AdminLogin from './admin/AdminLogin'
-
+import PostsParent from './posts/PostsParent'
 export class Home extends Component {
     render() {
         return (
             <div>
-                Home Component
-                <AdminLogin {...this.props} />
+               <PostsParent />
             </div>
         )
     }

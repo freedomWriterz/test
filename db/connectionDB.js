@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 module.exports = function() {
-  mongoose.connect("mongodb://localhost/Repos", { useNewUrlParser: true });
+  mongoose.connect("mongodb://localhost/Blog", { useNewUrlParser: true });
   const db = mongoose.connection;
 
   db.on("error", function() {

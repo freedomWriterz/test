@@ -1,63 +1,78 @@
 const mongoose = require("mongoose");
 
-// illustration example
-// delete all code below and rewrite as our application NEEDED;
-
-const postsSchema = new mongoose.Schema({
+// Create New Mongo Scheme To Store Our Data In It.
+let postSchema = new mongoose.Schema({
   title: String,
-  language: String,
-  status: Boolean
-});
+  content: String,
+<<<<<<< HEAD
+  imgURL: String
+=======
+  imgURL: String,
+>>>>>>> aea8d009cc65e47ba3729fdc10df1f07ecf79165
+})
 
-let Posts = new mongoose.model("posts", postsSchema);
+// Store The Scheme In Variable To Deal With This Variable.
+let Posts = mongoose.model('posts', postSchema);
 
-let getAll = cb => {
-  Posts.find({}, (err, data) => {
-    if (err) {
-      cb(err);
+<<<<<<< HEAD
+// @METHOD 'getPosts'
+// Return All Posts From Database
+let getPosts = (callBack) => {
+  Posts.find({}, (error, response) => {
+    if (error) {
+      callBack(error);
     } else {
-      cb(data);
+      console.log('database response', response)
+      callBack(response);
     }
-  });
-};
+  })
+}
 
-let add = (repo, cb) => {
-  Posts.create(repo, (err, data) => {
-    if (err) {
-      cb(err);
+// @METHOD
+// Add Specific Post To Database.
+let addNewPost = (newPost, callBack) => {
+  Posts.create(newPost, (error, response) => {
+    if (error) {
+      callBack(error)
     } else {
-      cb(data);
-    }
-  });
-};
-
-let update = (id, updatedStatus, cb) => {
-  Posts.updateOne(
-    { _id: id },
-    { $set: { status: updatedStatus } },
-    (err, data) => {
-      if (err) {
-        cb(err);
-      } else {
-        cb(data);
-      }
-    }
-  );
-};
-
-let deleteOne = (id, cb) => {
-  Posts.deleteOne({ _id: id }, (err, data) => {
-    if (err) {
-      cb(err);
+      getPosts(callBack)
+=======
+// @METHOD 'getRepositories'
+// Return All Repositories From Database
+let getPosts = (callBack) => {
+  console.log(callBack);
+  Posts.find({}, (error, response) => {
+    if (error) {
+      callBack(error);
     } else {
-      cb(data);
+      callBack(response);
+>>>>>>> aea8d009cc65e47ba3729fdc10df1f07ecf79165
     }
-  });
-};
+  })
+}
+
+<<<<<<< HEAD
+// @ METHOD
+// Delete Specific Post From Database.
+let deletePost = (postID, callBack) => {
+  Posts.findOneAndDelete({ _id: postID }, (error, response) => {
+    if (error) {
+      callBack(error);
+    } else {
+      getPosts(callBack);
+    }
+  })
+}
+
 
 module.exports = {
-  getAll,
-  add,
-  update,
-  deleteOne
+  getPosts,
+  addNewPost,
+  deletePost
+
+=======
+
+module.exports = {
+  getPosts
+>>>>>>> aea8d009cc65e47ba3729fdc10df1f07ecf79165
 };

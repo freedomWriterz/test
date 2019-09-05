@@ -2,59 +2,61 @@ const posts = require("../models/posts");
 const express = require("express");
 const router = express.Router();
 
-// illustration example,
-// delete all routes (API endpoints) here and build the one we needs at our project
+// @GET
+// To Check If Server Works Or Not
 
+<<<<<<< HEAD
+// localhost:9000/posts
+router.get('/', (req, res) => {
+    // console.log('SERVER get request line 10')
+
+    posts.getPosts(result => {
+        // console.log('result', result);    
+=======
+app.get('/', (req, res) => {
+    res.json('Server Works *.* ')
+})
+
+// @GET
+// Return All Repositories From Database
+app.get('/posts', (req, res) => {
+
+    mongo.getPosts(result => {
+>>>>>>> aea8d009cc65e47ba3729fdc10df1f07ecf79165
+        res.json(result)
+    })
+})
+
+<<<<<<< HEAD
 /*
-example of request URL
-GET     http://localhost:9000/posts
-POST    http://localhost:9000/posts   {body of requet}
-DELETE  http://localhost:9000/posts/5d619454a6b4a51ae0cb33de
-PUT     http://localhost:9000/repos/5d61937e0d47773150aa8e3c
-*/
+//  @GET
+//  Return All Posts From Database
+//  localhost:9000/posts/posts
+ router.get('/posts', (req, res) => {
+    posts.getPosts(result => {
+        res.json(result)
+    })
+}) */
 
-// delete here and rebuild the routes as we needed ____________________________________________
+// @POST
+// Add Specific Post To Database.
+router.post('/', (req, res) => {
+    posts.addNewPost(req.body, (response) => {
+        res.json(response);
+    })
+})
 
-router.get("/", (req, res) => {
-  posts.getAll(result => {
-    res.send(result);
-  });
-});
+// @DELETE
+// Delete Specific Post To Database.
+router.delete('/:id', (req, res) => {
+    let postID = req.params.id
+    posts.deletePost(postID, response => {
+        res.json(response);
+    })
+})
 
-/*
-
-Example:
-async await approach
-
-router.get("/", async (req, res) => {
-  const result = await posts.getRepos();
-  res.send(result);
-}); 
-
-*/
-
-router.post("/", (req, res) => {
-  const newPost = req.body;
-  posts.add(newPost, result => {
-    res.send(result);
-  });
-});
-
-router.put("/:id", (req, res) => {
-  const id = req.params.id;
-  const updatedStatus = req.body;
-  posts.update(id, updatedStatus, result => {
-    res.send(result);
-  });
-});
-
-router.delete("/:id", async (req, res) => {
-  const id = req.params.id;
-  posts.deleteOne(id, result => {
-    res.send(result);
-  });
-});
-
+=======
 /// ______________________________________________
+>>>>>>> aea8d009cc65e47ba3729fdc10df1f07ecf79165
 
 module.exports = router;

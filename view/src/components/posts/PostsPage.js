@@ -1,13 +1,13 @@
-import React, { Component } from 'react'
+import React from 'react'
+import PostItem from './PostItem'
 
-export class PostsPage extends Component {
-    render() {
-        return (
-            <div>
-                
-            </div>
-        )
-    }
+const Posts = (props) => {
+    console.log('POST FROM POSTS', props.posts)
+    return (
+        <ul>
+            {props.posts.map((post, id) => <PostItem key={id} post={post} />)}
+        </ul>
+    )
 }
 
-export default PostsPage
+export default Posts
