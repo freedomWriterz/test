@@ -17,7 +17,7 @@ class PostsParent extends Component {
   render() {
     return (
       <div className="App">
-        {this.state.posts.length > 0 && <Posts posts={this.state.posts} />}
+        {this.state.posts.length > 0 && <PostsPage posts={this.state.posts} />}
       </div>
     );
   }

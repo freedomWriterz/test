@@ -1,7 +1,7 @@
 import React from 'react'
 import PostItem from './PostItem'
 
-const Posts = (props) => {
+const PostsPage = (props) => {
     console.log('POST FROM POSTS', props.posts)
     return (
         <ul>
@@ -10,4 +10,4 @@ const Posts = (props) => {
     )
 }
 
-export default Posts
+export default PostsPage
