@@ -4,30 +4,13 @@ const router = express.Router();
 
 // @GET
 // To Check If Server Works Or Not
-
-<<<<<<< HEAD
 // localhost:9000/posts
 router.get('/', (req, res) => {
-    // console.log('SERVER get request line 10')
-
     posts.getPosts(result => {
-        // console.log('result', result);    
-=======
-app.get('/', (req, res) => {
-    res.json('Server Works *.* ')
-})
-
-// @GET
-// Return All Repositories From Database
-app.get('/posts', (req, res) => {
-
-    mongo.getPosts(result => {
->>>>>>> aea8d009cc65e47ba3729fdc10df1f07ecf79165
         res.json(result)
     })
 })
 
-<<<<<<< HEAD
 /*
 //  @GET
 //  Return All Posts From Database
@@ -55,8 +38,5 @@ router.delete('/:id', (req, res) => {
     })
 })
 
-=======
-/// ______________________________________________
->>>>>>> aea8d009cc65e47ba3729fdc10df1f07ecf79165
 
 module.exports = router;
