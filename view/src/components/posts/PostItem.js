@@ -1,5 +1,6 @@
 import React from 'react'
 import PostDetails from './PostDetail'
+
 import {
     BrowserRouter as Router,
     Route,
